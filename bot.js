@@ -27,7 +27,6 @@ client.on('message', message => {
             break;
         case 'spam':
             client.commands.get('spam').execute(message, args);
-            console.log(args);
             break;
         case 'clear':
             client.commands.get('clear').execute(message, args);
