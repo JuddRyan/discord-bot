@@ -1,4 +1,6 @@
+const { MessageEmbed } = require('discord.js');
 const search = require('yt-search');
+const embed = require('./embed');
 
 module.exports = {
     name: 'search',
@@ -14,22 +16,28 @@ module.exports = {
             }
 
             response += `Choose a number between 1 and ${videos.length}`;
-            message.channel.send(response);
+            //message.channel.send(response);
+
+            const embed = new MessageEmbed()
+            .setColor('#FF0000')
+            .setTitle('List of Youtube videos')
+            .setDescription(response)
+            message.channel.send(embed);
 
             // message collector
             // if user gives number it cannot be empty and has to be shorter and longer then specified
-            const filter = music => !isNaN(music.content) && music.content < videos.length && music.content >0;
+            // const filter = music => !isNaN(music.content) && music.content < videos.length && music.content >0;
 
-            const collection = message.channel.createMessageCollector(filter);
+            // const collection = message.channel.createMessageCollector(filter);
 
-            collection.videos = videos;
+            // collection.videos = videos;
 
-            // play command
-            collection.once('collect', function(music) {
-                const commandFile = require('./play.js');
+            // // play command
+            // collection.once('collect', function(music) {
+            //     const commandFile = require('./play.js');
 
-                commandFile.run
-            });
+            //     commandFile.run
+            // });
 
 
         });
