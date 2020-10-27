@@ -40,6 +40,12 @@ client.on('message', message => {
         case 'roll':
             client.commands.get('roll').execute(message, args);
             break;
+        case 'search':
+            client.commands.get('search').execute(message, args);
+            break;
+        case 'commands':
+        client.commands.get('commands').execute(message);
+        break;
     }
 
 })
