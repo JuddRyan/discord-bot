@@ -44,8 +44,13 @@ client.on('message', message => {
             client.commands.get('search').execute(message, args);
             break;
         case 'commands':
-        client.commands.get('commands').execute(message);
-        break;
+            client.commands.get('commands').execute(message);
+            break;
+        case 'pow':
+            // change this later
+            let value = args.shift();
+            message.channel.send(Math.pow(value, args));
+            break;
     }
 
 })
