@@ -15,7 +15,7 @@ client.on('ready', () => {
     console.log('Connected as ' + client.user.tag);
 });
 
-client.on('message', message => {
+client.on('message', async message => {
     if (!message.content.slice(prefix.length).split(/ +/) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
 
@@ -45,6 +45,9 @@ client.on('message', message => {
             break;
         case 'commands':
             client.commands.get('commands').execute(message);
+            break;
+        case 'play':
+            client.commands.get('play').execute(message, args);
             break;
         case 'pow':
             // change this later
