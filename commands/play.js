@@ -9,7 +9,7 @@ module.exports = {
     description: "playes music",
     async execute(message, args){
         if (!message.member.voice.channel) return message.reply("You need to be connected to a voice channel.");
-        if (message.guild.me.voice.channel) return message.channel.send("The bot is already connected.");
+        // if (message.guild.me.voice.channel) return message.channel.send("The bot is already connected.");
         if (!args[0]) return message.reply("Please add a link with the command.");
 
         const validate = await ytdl.validateURL(args[0]);
