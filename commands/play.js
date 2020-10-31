@@ -3,7 +3,6 @@ const discord = require("discord.js");
 const { validateURL } = require("ytdl-core");
 const ytdl = require("ytdl-core");
 
-// controlleer waarom .run = async
 module.exports = {
     name: "play",
     description: "playes music",
@@ -15,10 +14,12 @@ module.exports = {
         const validate = await ytdl.validateURL(args[0]);
         if (!validate) return message.channel.send("Sorry, please use a valid youtube url.");
 
-        const info = await ytdl.getBasicInfo(args[0]);
+        const info = await ytdl.getInfo(args[0]);
         const options = {
             seek: 3,
-            volume: 1
+            volume: 1,
+            // added larger dlChunkSize to try and fix randomly stopping songs
+            dlChunkSize: 2000000,
         };
 
         const channelJoin = message.member.voice.channel.join()
@@ -27,6 +28,6 @@ module.exports = {
                 const dispatcher = voiceChannel.play(stream, options);
             }).catch(console.error);
 
-        message.channel.send(`Now playing ${info}`);
+        message.channel.send(`Now playing ${info.title}`);
     }
 }
