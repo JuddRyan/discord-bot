@@ -19,7 +19,7 @@ module.exports = {
             seek: 3,
             volume: 1,
             // added larger dlChunkSize to try and fix randomly stopping songs
-            dlChunkSize: 2000000,
+            // dlChunkSize: 2000000,
         };
 
         const channelJoin = message.member.voice.channel.join()
