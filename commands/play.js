@@ -19,6 +19,7 @@ module.exports = {
             seek: 3,
             volume: 1,
             // added larger dlChunkSize to try and fix randomly stopping songs
+            // crashes bot
             // dlChunkSize: 2000000,
         };
 
@@ -28,6 +29,7 @@ module.exports = {
                 const dispatcher = voiceChannel.play(stream, options);
             }).catch(console.error);
 
-        message.channel.send(`Now playing ${info.title}`);
+        // info.title does not work
+        message.channel.send(`Playing song.`);
     }
 }

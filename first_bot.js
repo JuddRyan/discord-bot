@@ -24,8 +24,6 @@ client.on('message', message => {
         message.channel.send('pong!');
     } else if (command === 'commands') {
         message.channel.send('ping \npow \npow2 \nroot')
-    } else if (command === 'gay') {
-        message.channel.send('Bram is gay.');
     } else if (command === 'pow2') {
         message.channel.send(Math.pow(args, 2));
     } else if (command === 'pow') {

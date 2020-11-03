@@ -1,6 +1,5 @@
 const { MessageEmbed } = require('discord.js');
 const search = require('yt-search');
-const embed = require('./embed');
 
 module.exports = {
     name: 'search',
@@ -26,18 +25,18 @@ module.exports = {
 
             // message collector
             // if user gives number it cannot be empty and has to be shorter and longer then specified
-            // const filter = music => !isNaN(music.content) && music.content < videos.length && music.content >0;
+            const filter = music => !isNaN(music.content) && music.content < videos.length + 1 && music.content >0;
 
-            // const collection = message.channel.createMessageCollector(filter);
+            const collection = message.channel.createMessageCollector(filter);
 
-            // collection.videos = videos;
+            collection.videos = videos;
 
-            // // play command
-            // collection.once('collect', function(music) {
-            //     const commandFile = require('./play.js');
-
-            //     commandFile.run
-            // });
+            // play command
+            collection.once('collect', function(music) {
+                const commandFile = require('./play');
+                
+                commandFile.execute(message, [this.videos[parseInt(music.content) - 1].url]);
+            });
 
 
         });
