@@ -49,6 +49,12 @@ client.on('message', async message => {
         case 'play':
             client.commands.get('play').execute(message, args);
             break;
+        case 'reaction':
+            client.commands.get('reaction').execute(message);
+            break;
+        case 'emo':
+            client.commands.get('emo').execute(message, args);
+            break;
         case 'pow':
             // change this later
             let value = args.shift();
