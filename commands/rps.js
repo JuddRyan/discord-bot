@@ -21,14 +21,14 @@ module.exports = {
                 }
                 break;
             case 2:
-                    if (args == 'rock') {
-                        message.channel.send('You lose! I used paper.');
-                    } else if (args == 'paper') {
-                        message.channel.send('Tie! I used paper.')
-                    } else if (args == 'scissors') {
-                        message.channel.send('You win! I used paper.')
-                    }
-                    break;
+                if (args == 'rock') {
+                    message.channel.send('You lose! I used paper.');
+                } else if (args == 'paper') {
+                    message.channel.send('Tie! I used paper.')
+                } else if (args == 'scissors') {
+                    message.channel.send('You win! I used paper.')
+                }
+                break;
             case 0:
                 if (args == 'rock') {
                     message.channel.send('You win! I used scissors.');
