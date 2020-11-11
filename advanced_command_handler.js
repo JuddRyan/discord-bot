@@ -36,8 +36,6 @@ client.on('message', message => {
 
     if (command === 'ping') {
         client.commands.get('ping').execute(message, args);
-    } else if (command === 'gay') {
-        message.channel.send('Bram is gay.');
     } else if (command === 'pow') {
         let value = args.shift();
         message.channel.send(Math.pow(value, args));
