@@ -17,8 +17,9 @@ client.on('ready', () => {
 });
 
 client.on('message', async message => {
-    if (!message.content.slice(prefix.length).split(/ +/) || message.author.bot) return;
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
+    console.log(args);
 
     const command = args.shift().toLowerCase();
 
@@ -65,4 +66,4 @@ client.on('message', async message => {
 
 })
 
-client.login("NzY1Mjg5NDY2ODU5NzQ5Mzky.X4SpWw.xPfID6qxi3UinY2L2wU4NNgCwWc");
+client.login(config.token);
