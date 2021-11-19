@@ -1,10 +1,10 @@
-module.exports= {
-    name: 'ping',
-    description: 'this is a ping command!',
-    execute(message, args) {
-        message.channel.send('pong!');
+module.exports = {
+	name: 'ping',
+	description: 'this is a ping command!',
+	execute(message) {
+		message.channel.send('pong!');
 
-        // response = @user, pong
-        message.reply('pong!');
-    }
-}
+		// response = @user, pong
+		message.reply('pong!');
+	},
+};

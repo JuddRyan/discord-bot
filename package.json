@@ -1,0 +1,31 @@
+{
+  "name": "lyrica",
+  "version": "0.0.1",
+  "description": "A discord bot made in javascript",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgm-ryanjudd/discord-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "js"
+  ],
+  "author": "Ryan Judd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pgm-ryanjudd/discord-bot/issues"
+  },
+  "homepage": "https://github.com/pgm-ryanjudd/discord-bot#readme",
+  "devDependencies": {
+    "eslint": "^8.2.0"
+  },
+  "dependencies": {
+    "@discordjs/voice": "github:discordjs/voice",
+    "discord.js": "^13.3.1"
+  }
+}
